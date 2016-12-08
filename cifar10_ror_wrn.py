@@ -12,7 +12,7 @@ from keras.optimizers import Adam
 from keras import backend as K
 
 batch_size = 64
-nb_epoch = 100
+nb_epoch = 300
 img_rows, img_cols = 32, 32
 
 (trainX, trainY), (testX, testY) = cifar10.load_data()
@@ -42,7 +42,7 @@ model = ror.create_pre_residual_of_residual(init_shape, nb_classes=10, N=6, k=2,
 
 #model.summary()
 
-optimizer = Adam(lr=7e-4)
+optimizer = Adam(lr=1e-3)
 
 model.compile(loss="categorical_crossentropy", optimizer=optimizer, metrics=["acc"])
 print("Finished compiling")
