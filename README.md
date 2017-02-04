@@ -2,7 +2,7 @@
 
 This is an implementation of the paper ["Residual Networks of Residual Networks: Multilevel Residual Networks"](https://arxiv.org/pdf/1608.02908v1.pdf)
 
-# Explaination
+# Explanation
 
 Ordinarily, Residual networks have hundreds or even thousands of layers to accurately classify images in major image recognition tasks, but
 building a network by simply stacking residual blocks inevitably limits its optimization ability.
@@ -46,7 +46,7 @@ model = ror.create_pre_residual_of_residual(input_dim, nb_classes=100, N=6, k=2,
 
 The RoR-WRN-40-2 model described in the paper requires 500 epochs to acheive a classification accuracy of 94.99 % (5.01 % error).
 
-The Theano weights provided for this model are trained for 100 epochs using Adam with a learning rate of 1e-3, which acheives a classication accuracy of 94.48% (5.52 % error)
+The Theano weights provided for this model are trained for 100 epochs using Adam with a learning rate of 1e-3, which achieves a classification accuracy of 94.48% (5.52 % error)
 
 # Requirements
 
