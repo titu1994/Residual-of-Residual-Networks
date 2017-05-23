@@ -51,10 +51,10 @@ print("Allocating GPU memory")
 model.load_weights("weights/RoR-WRN-40-2-Weights.h5")
 print("Model loaded.")
 
-# model.fit_generator(generator.flow(trainX, trainY, batch_size=batch_size), samples_per_epoch=len(trainX), nb_epoch=nb_epoch,
+# model.fit_generator(generator.flow(trainX, trainY, batch_size=batch_size), steps_per_epoch=len(trainX) // batch_size + 1, nb_epoch=nb_epoch,
 #                    callbacks=[callbacks.ModelCheckpoint("weights/RoR-WRN-40-2-Weights.h5", monitor="val_acc", save_best_only=True)],
 #                    validation_data=(testX, testY),
-#                    nb_val_samples=testX.shape[0], verbose=2)
+#                    validation_steps=testX.shape[0] // batch_size + 1, verbose=2)
 
 yPreds = model.predict(testX)
 yPred = np.argmax(yPreds, axis=1)
